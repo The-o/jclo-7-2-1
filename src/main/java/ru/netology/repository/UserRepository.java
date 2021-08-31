@@ -8,6 +8,7 @@ import java.util.Map;
 import org.springframework.stereotype.Repository;
 
 import ru.netology.model.Authorities;
+import ru.netology.model.User;
 
 @Repository
 public class UserRepository {
@@ -27,7 +28,7 @@ public class UserRepository {
         }});
     }};
 
-    public List<Authorities> getUserAuthorities(String user, String password) {
-        return authorities.get(user + ":" + password);
+    public List<Authorities> getUserAuthorities(User user) {
+        return authorities.get(user.getLogin() + ":" + user.getPassword());
     }
 }
