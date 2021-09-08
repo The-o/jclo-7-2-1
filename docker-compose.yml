@@ -1,0 +1,9 @@
+version: "3.7"
+
+services:
+  jclo-7-5-1:
+    container_name: jclo-7-5-1
+    image: jclo-7-5-1
+    build: .
+    ports:
+      - 80:8080
